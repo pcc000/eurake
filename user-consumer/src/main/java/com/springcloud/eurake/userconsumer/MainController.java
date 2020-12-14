@@ -1,0 +1,23 @@
+package com.springcloud.eurake.userconsumer;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+/**
+ * @Auther: shuyiwei
+ * @Date: 2020/12/14 20:39
+ * @Description:
+ */
+@RestController
+public class MainController {
+
+    @Resource
+    private UserService userService;
+
+    @RequestMapping("/isAlive")
+    private String isAlive(){
+        return userService.isAlive();
+    }
+}

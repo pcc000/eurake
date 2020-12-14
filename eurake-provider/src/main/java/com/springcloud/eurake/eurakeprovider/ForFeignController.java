@@ -1,6 +1,6 @@
 package com.springcloud.eurake.eurakeprovider;
 
-import com.springcloud.eurake.api.UserApi;
+import com.springcloud.eurake.userapi.UserApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +15,7 @@ public class ForFeignController implements UserApi {
     private String port;
 
     @Override
-    public String alive() {
+    public String isAlive() {
         return "my port is "+port;
     }
 }
