@@ -1,9 +1,11 @@
 package com.springcloud.eurake.userconsumer;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * @Auther: shuyiwei
@@ -19,5 +21,10 @@ public class MainController {
     @RequestMapping("/isAlive")
     private String isAlive(){
         return userService.isAlive();
+    }
+
+    @RequestMapping("/getId")
+    public Map<Integer,String> getId(@RequestParam("id") Integer id){
+        return userService.getMap(id);
     }
 }
